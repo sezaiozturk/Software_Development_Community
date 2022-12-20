@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_main"
+    app:startDestination="@id/navigation_post">
+
+    <navigation android:id="@+id/navigation_search"
+        app:startDestination="@id/searchFragment">
+        <fragment
+            android:id="@+id/searchFragment"
+            android:name="com.ktunsdc.software_development_community.view.SearchFragment"
+            android:label="SearchFragment"
+            tools:layout="@layout/fragment_search" >
+            <action
+                android:id="@+id/action_searchFragment_to_profileFragment2"
+                app:destination="@id/profileFragment2" />
+        </fragment>
+        <fragment
+            android:id="@+id/profileFragment2"
+            android:name="com.ktunsdc.software_development_community.view.ProfileFragment"
+            android:label="ProfileFragment"
+            tools:layout="@layout/fragment_profile">
+            <argument
+                android:name="userUid"
+                app:argType="string" />
+            <argument
+                android:name="control"
+                app:argType="integer" />
+        </fragment>
+    </navigation>
+    <navigation android:id="@+id/navigation_profile"
+        app:startDestination="@id/profileFragment">
+        <fragment
+            android:id="@+id/profileFragment"
+            android:name="com.ktunsdc.software_development_community.view.ProfileFragment"
+            android:label="ProfileFragment"
+            tools:layout="@layout/fragment_profile">
+            <argument
+                android:name="userUid"
+                app:argType="string"
+                android:defaultValue=" " />
+            <argument
+                android:name="control"
+                app:argType="integer"
+                android:defaultValue="0" />
+            <action
+                android:id="@+id/action_profileFragment_to_memberInformationFragment2"
+                app:destination="@id/memberInformationFragment2" />
+        </fragment>
+        <fragment
+            android:id="@+id/memberInformationFragment2"
+            android:name="com.ktunsdc.software_development_community.view.MemberInformationFragment"
+            android:label="MemberInformationFragment"
+            tools:layout="@layout/fragment_member_information">
+            <argument
+                android:name="control"
+                app:argType="integer" />
+        </fragment>
+    </navigation>
+    <navigation android:id="@+id/navigation_gallery"
+        app:startDestination="@id/galleryFragment">
+        <fragment
+            android:id="@+id/shareFragment"
+            android:name="com.ktunsdc.software_development_community.view.ShareFragment"
+            android:label="ShareFragment"
+            tools:layout="@layout/fragment_share" >
+            <argument
+                android:name="control"
+                app:argType="integer" />
+        </fragment>
+        <fragment
+            android:id="@+id/galleryFragment"
+            android:name="com.ktunsdc.software_development_community.view.GalleryFragment"
+            android:label="fragment_gallery"
+            tools:layout="@layout/fragment_gallery">
+            <action
+                android:id="@+id/action_galleryFragment_to_shareFragment"
+                app:destination="@id/shareFragment" />
+            <action
+                android:id="@+id/action_galleryFragment_to_photoFragment"
+                app:destination="@id/photoFragment" />
+            <action
+                android:id="@+id/action_galleryFragment_to_lockFragment2"
+                app:destination="@id/lockFragment2" />
+        </fragment>
+        <fragment
+            android:id="@+id/photoFragment"
+            android:name="com.ktunsdc.software_development_community.view.PhotoFragment"
+            android:label="fragment_photo"
+            tools:layout="@layout/fragment_photo" >
+            <argument
+                android:name="lineNumber"
+                app:argType="integer" />
+        </fragment>
+        <fragment
+            android:id="@+id/lockFragment2"
+            android:name="com.ktunsdc.software_development_community.view.LockFragment"
+            android:label="fragment_lock"
+            tools:layout="@layout/fragment_lock" />
+    </navigation>
+    <navigation android:id="@+id/navigation_post"
+        app:startDestination="@id/postFragment">
+        <fragment
+            android:id="@+id/shareFragment2"
+            android:name="com.ktunsdc.software_development_community.view.ShareFragment"
+            android:label="ShareFragment"
+            tools:layout="@layout/fragment_share">
+            <argument
+                android:name="control"
+                app:argType="integer" />
+        </fragment>
+        <fragment
+            android:id="@+id/postFragment"
+            android:name="com.ktunsdc.software_development_community.view.PostFragment"
+            android:label="PostFragment"
+            tools:layout="@layout/fragment_post">
+            <action
+                android:id="@+id/action_postFragment_to_shareFragment2"
+                app:destination="@id/shareFragment2" />
+            <action
+                android:id="@+id/action_postFragment_to_commentFragment"
+                app:destination="@id/commentFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/commentFragment"
+            android:name="com.ktunsdc.software_development_community.view.CommentFragment"
+            android:label="CommentFragment"
+            tools:layout="@layout/fragment_comment">
+            <argument
+                android:name="postId"
+                app:argType="string" />
+        </fragment>
+    </navigation>
+    <navigation android:id="@+id/navigation_chat"
+        app:startDestination="@id/chatFragment">
+        <fragment
+            android:id="@+id/lockFragment"
+            android:name="com.ktunsdc.software_development_community.view.LockFragment"
+            android:label="fragment_lock"
+            tools:layout="@layout/fragment_lock" />
+        <fragment
+            android:id="@+id/chatFragment"
+            android:name="com.ktunsdc.software_development_community.view.ChatFragment"
+            android:label="fragment_chat"
+            tools:layout="@layout/fragment_chat">
+            <action
+                android:id="@+id/action_chatFragment_to_lockFragment"
+                app:destination="@id/lockFragment" />
+        </fragment>
+    </navigation>
+</navigation>

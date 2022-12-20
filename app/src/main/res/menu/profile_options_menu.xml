@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/more" app:showAsAction="always" android:title="" android:icon="@drawable/ic_baseline_more_vert_24">
+        <menu>
+            <item android:id="@+id/edit" android:title="Profil Düzenle" android:icon="@drawable/ic_baseline_edit_24" app:showAsAction="always"/>
+            <item android:id="@+id/contact" android:title="İletişim" app:showAsAction="always" android:icon="@drawable/ic_baseline_local_post_office_24"/>
+            <item android:id="@+id/exit" android:title="Çıkış" android:icon="@drawable/ic_baseline_power_settings_new_24" app:showAsAction="always"/>
+        </menu>
+    </item>
+</menu>

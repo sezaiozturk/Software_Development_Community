@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="member"
+            type="com.ktunsdc.software_development_community.model.Member" />
+        <variable
+            name="listener"
+            type="com.ktunsdc.software_development_community.adapter.ClickListener" />
+        <variable
+            name="optionsListener"
+            type="com.ktunsdc.software_development_community.adapter.RootOptionsClickListener" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/row_constraint"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:onClick="@{listener::onMemberClicked}"
+    android:onLongClick="@{optionsListener::onRootClickListener}"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    android:background="@drawable/custom_row_members">
+
+    <TextView
+        android:id="@+id/goneText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{member.uid+' '+member.level}"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/circleImageView"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:downloadUrl="@{member.profilePhotoUrl}"
+        android:gender="@{member.gender}"
+        app:civ_border_color="@color/black"
+        app:civ_border_width="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtMemberName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="18dp"
+        android:text="@{member.name+' '+member.surName}"
+        android:textColor="@color/gray_100"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/circleImageView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtArea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:text="@{member.area}"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@+id/circleImageView"
+        app:layout_constraintTop_toBottomOf="@+id/txtMemberName" />
+
+    <TextView
+        android:id="@+id/txtLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@{member.level.equals(`0`)?`Üye`:(member.level.equals(`1`)?`Yönetici`:`Başkan`)}"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/imgStatus"
+        app:layout_constraintStart_toStartOf="@+id/imgStatus"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imgStatus"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="15dp"
+        android:status="@{member.status}"
+        android:tag="@{member.status}"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout >
+</layout>

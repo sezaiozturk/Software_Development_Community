@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "158875460023",
+    "project_id": "ygtkotlin-259c0",
+    "storage_bucket": "ygtkotlin-259c0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:158875460023:android:23833dbf2df8a86b364832",
+        "android_client_info": {
+          "package_name": "com.ktunsdc.software_development_community"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "158875460023-f6tk2n5m3flsjkm42hmleajssans7c9a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2sJU9ivT9J9yYoUXnAEIs-sEhqDPublg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "158875460023-f6tk2n5m3flsjkm42hmleajssans7c9a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

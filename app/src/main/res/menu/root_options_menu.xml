@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="Aktif/Pasif" android:id="@+id/status" android:icon="@drawable/ic_baseline_active_24"/>
+    <item android:title="Seviye" android:id="@+id/level" android:icon="@drawable/ic_baseline_supervised_user_circle_24">
+        <menu>
+            <item android:title="Süper Yönetici" android:id="@+id/levelTwo"/>
+            <item android:title="Yönetici" android:id="@+id/levelOne"/>
+            <item android:title="Üye" android:id="@+id/levelZero"/>
+        </menu>
+    </item>
+    <item android:title="Sil" android:id="@+id/delete" android:icon="@drawable/ic_baseline_delete_outline_24"/>
+    <item android:title="İptal" android:id="@+id/cancel" android:icon="@drawable/ic_baseline_close_24"/>
+</menu>
